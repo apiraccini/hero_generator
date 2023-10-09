@@ -24,8 +24,8 @@ This is the superpower <<<{prompt}>>>.
 Result:
 """}
         ],
-        max_tokens = 256,
-        temperature = 0
+        max_tokens = 128,
+        temperature = 0.6
     ).choices[0].message.content
     
     return response
@@ -35,7 +35,7 @@ def generate_hero_image(description):
     response = openai.Image.create(
         prompt = f"""
 I am going to provide you with the name and description of a super hero.
-I want you to create an image of the hero using its superpowers based on the description. The image should be in a comic style.
+I want you to create an image of the hero using its superpowers based on the description. The image should be in a comic and without any text.
 Name and description: {description}
 """,
         n=1,
